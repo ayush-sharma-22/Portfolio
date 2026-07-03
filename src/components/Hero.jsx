@@ -295,11 +295,17 @@ export default function Hero() {
 
               {/* Bottom buttons */}
               <div className="px-5 py-4 border-t border-bg-border flex gap-3 bg-[#0d1117]/50">
-                <button className="btn-primary text-xs py-1.5 px-3">
+                <button 
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-primary text-xs py-1.5 px-3"
+                >
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
                   Run Profile
                 </button>
-                <button className="btn-outline text-xs py-1.5 px-3">
+                <button 
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-outline text-xs py-1.5 px-3"
+                >
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
                   View Projects
                 </button>
