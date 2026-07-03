@@ -98,7 +98,6 @@ const fallbackRepos = [
 function useGitHubRepos(username) {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -114,18 +113,17 @@ function useGitHubRepos(username) {
       })
       .catch((e) => { 
         console.warn('GitHub API failed, using fallback data:', e.message);
-        // Use fallback data so the UI never breaks during rate limits
         setRepos(fallbackRepos); 
         setLoading(false); 
       });
   }, [username]);
 
-  return { repos, loading, error };
+  return { repos, loading };
 }
 
 // ── Left panel — repo list ─────────────────────────────────────────────────────
 function RepoList() {
-  const { repos, loading, error } = useGitHubRepos('ayush-sharma-22');
+  const { repos, loading } = useGitHubRepos('ayush-sharma-22');
 
   return (
     <div
@@ -149,7 +147,7 @@ function RepoList() {
           </svg>
           <span className="text-display font-semibold text-text-primary text-sm">Repositories</span>
         </div>
-        {!loading && !error && (
+        {!loading && (
           <span className="text-mono text-xs text-text-muted bg-bg-border/50 px-2 py-0.5 rounded-full">
             {repos.length}
           </span>
@@ -163,14 +161,7 @@ function RepoList() {
             <span className="text-mono text-xs text-text-muted animate-pulse">Fetching repos...</span>
           </div>
         )}
-        {error && (
-          <div className="flex items-center justify-center h-full px-4 text-center">
-            <span className="text-mono text-xs text-text-muted">
-              Could not load repos. Check back later.
-            </span>
-          </div>
-        )}
-        {!loading && !error && repos.map((repo, i) => (
+        {!loading && repos.map((repo, i) => (
           <motion.a
             key={repo.id}
             href={repo.html_url}
