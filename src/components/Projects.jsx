@@ -87,6 +87,14 @@ const pinnedProjects = [
 ];
 
 // ── GitHub repo list (live fetch) ─────────────────────────────────────────────
+const fallbackRepos = [
+  { id: 1, name: 'Ecommerce-backend', description: 'A robust ecommerce backend API built with Spring Boot.', html_url: 'https://github.com/ayush-sharma-22/Ecommerce-backend', stargazers_count: 2, updated_at: new Date().toISOString() },
+  { id: 2, name: 'Salon-microservice', description: 'Microservices based salon booking architecture.', html_url: 'https://github.com/ayush-sharma-22/Salon-microservice', stargazers_count: 12, updated_at: new Date().toISOString() },
+  { id: 3, name: 'TrustSight', description: 'AI-powered fake review detection system.', html_url: 'https://github.com/ayush-sharma-22/TrustSight', stargazers_count: 4, updated_at: new Date().toISOString() },
+  { id: 4, name: 'Portfolio', description: 'My personal developer portfolio built with React and Tailwind.', html_url: 'https://github.com/ayush-sharma-22/Portfolio', stargazers_count: 1, updated_at: new Date().toISOString() },
+  { id: 5, name: 'forage-midas', description: 'JPMorgan Chase software engineering simulation.', html_url: 'https://github.com/ayush-sharma-22/forage-midas', stargazers_count: 0, updated_at: new Date().toISOString() },
+];
+
 function useGitHubRepos(username) {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -97,11 +105,19 @@ function useGitHubRepos(username) {
       `https://api.github.com/users/${username}/repos?sort=updated&per_page=30&type=public`
     )
       .then((r) => {
-        if (!r.ok) throw new Error('GitHub API error');
+        if (!r.ok) throw new Error('GitHub API rate limit or error');
         return r.json();
       })
-      .then((data) => { setRepos(data); setLoading(false); })
-      .catch((e) => { setError(e.message); setLoading(false); });
+      .then((data) => { 
+        setRepos(data); 
+        setLoading(false); 
+      })
+      .catch((e) => { 
+        console.warn('GitHub API failed, using fallback data:', e.message);
+        // Use fallback data so the UI never breaks during rate limits
+        setRepos(fallbackRepos); 
+        setLoading(false); 
+      });
   }, [username]);
 
   return { repos, loading, error };
