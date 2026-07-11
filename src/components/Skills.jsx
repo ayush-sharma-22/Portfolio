@@ -40,7 +40,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="relative py-20 grid-bg">
+    <section id="skills" className="relative py-20 grid-bg overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-orange/5 rounded-full blur-[180px] pointer-events-none" />
 

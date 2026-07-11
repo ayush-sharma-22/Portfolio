@@ -149,7 +149,7 @@ function ExperienceCard({ exp }) {
 // ── Main section ─────────────────────────────────────────────────────────────
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24 grid-bg">
+    <section id="experience" className="relative py-24 grid-bg overflow-hidden">
       <div className="absolute right-0 top-1/3 w-64 h-64 bg-accent-cyan/4 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-16">

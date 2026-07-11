@@ -89,7 +89,7 @@ const colorConfig = {
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-24 grid-bg">
+    <section id="certifications" className="relative py-24 grid-bg overflow-hidden">
       <div className="absolute right-0 top-1/4 w-72 h-72 bg-accent-green/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">

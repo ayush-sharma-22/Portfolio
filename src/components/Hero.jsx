@@ -152,7 +152,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Text Content */}
-          <div>
+          <div className="min-w-0 max-w-full">
             {/* Status pill */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}

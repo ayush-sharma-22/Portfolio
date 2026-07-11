@@ -279,7 +279,7 @@ function PinnedCard({ project, i }) {
 // ── Main section ──────────────────────────────────────────────────────────────
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 grid-bg">
+    <section id="projects" className="relative py-24 grid-bg overflow-hidden">
       <div className="absolute left-0 top-1/3 w-72 h-72 bg-accent-orange/4 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">

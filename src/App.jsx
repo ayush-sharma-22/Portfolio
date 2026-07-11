@@ -9,9 +9,10 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary">
+    <div className="min-h-screen bg-bg-primary text-text-primary" style={{ overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
       <SidebarNav />
       <main className="md:pr-14">
         <Hero />
