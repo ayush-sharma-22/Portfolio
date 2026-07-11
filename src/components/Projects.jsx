@@ -282,7 +282,7 @@ export default function Projects() {
     <section id="projects" className="relative py-24 grid-bg">
       <div className="absolute left-0 top-1/3 w-72 h-72 bg-accent-orange/4 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         {/* Header */}
         <motion.div

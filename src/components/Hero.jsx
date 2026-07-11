@@ -149,7 +149,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-orange/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent-cyan/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Text Content */}
           <div>
@@ -182,7 +182,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-display font-bold text-5xl lg:text-6xl xl:text-7xl mb-4 leading-tight"
+              className="text-display font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 leading-tight"
             >
               <span className="gradient-text">Ayush</span>
               <br />
@@ -256,6 +256,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-full min-w-0"
           >
             <div className="terminal-window shadow-glow-orange">
               {/* Editor chrome */}
@@ -272,7 +273,7 @@ export default function Hero() {
               </div>
 
               {/* Code content — state-driven typewriter */}
-              <div className="p-5 text-mono text-sm leading-7 min-h-[320px]">
+              <div className="p-4 md:p-5 text-mono text-xs md:text-sm leading-7 min-h-[320px] overflow-x-auto scrollbar-thin">
                 {CODE_LINES.map((line, i) => {
                   if (i > visibleLines) return null;
                   const isActive = i === visibleLines;

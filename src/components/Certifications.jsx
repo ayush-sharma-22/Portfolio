@@ -92,7 +92,7 @@ export default function Certifications() {
     <section id="certifications" className="relative py-24 grid-bg">
       <div className="absolute right-0 top-1/4 w-72 h-72 bg-accent-green/3 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <motion.div
           initial="hidden"

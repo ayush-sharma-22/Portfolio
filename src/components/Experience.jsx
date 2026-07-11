@@ -152,7 +152,7 @@ export default function Experience() {
     <section id="experience" className="relative py-24 grid-bg">
       <div className="absolute right-0 top-1/3 w-64 h-64 bg-accent-cyan/4 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-16">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-16">
 
         {/* Header */}
         <motion.div
@@ -170,8 +170,8 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical centre line */}
-          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent-orange/60 via-accent-orange/30 to-transparent" />
+          {/* Vertical centre line (left aligned on mobile) */}
+          <div className="absolute left-[13px] md:left-1/2 -translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent-orange/60 via-accent-orange/30 to-transparent" />
 
           <div className="space-y-16">
             {experiences.map((exp, i) => {
@@ -184,11 +184,11 @@ export default function Experience() {
                   viewport={{ once: true, margin: '-80px' }}
                   variants={fadeUp}
                   custom={i}
-                  className="relative flex items-center"
+                  className="relative flex flex-col md:flex-row items-start md:items-center"
                 >
-                  {/* Centre dot */}
+                  {/* Centre dot (left aligned on mobile) */}
                   <div
-                    className="absolute left-1/2 -translate-x-1/2 z-10 rounded-full border-[3px] border-bg-primary"
+                    className="absolute left-[13px] md:left-1/2 -translate-x-1/2 z-10 rounded-full border-[3px] border-bg-primary mt-2.5 md:mt-0"
                     style={{
                       width: exp.isInit ? '18px' : '14px',
                       height: exp.isInit ? '18px' : '14px',
@@ -208,37 +208,37 @@ export default function Experience() {
                   {isLeft ? (
                     <>
                       {/* Card — left side */}
-                      <div className="w-[46%] pr-8 flex justify-end">
-                        <div className="w-full max-w-sm">
+                      <div className="w-full md:w-[46%] pl-10 md:pl-0 md:pr-8 flex md:justify-end order-2 md:order-1 mt-3 md:mt-0">
+                        <div className="w-full max-w-sm md:max-w-md lg:max-w-sm">
                           <ExperienceCard exp={exp} />
                         </div>
                       </div>
 
                       {/* Gap covering the dot */}
-                      <div className="w-[8%]" />
+                      <div className="hidden md:block w-[8%] order-2" />
 
                       {/* Date pill — right side */}
-                      <div className="w-[46%] pl-8 flex items-center">
+                      <div className="w-full md:w-[46%] pl-10 md:pl-8 flex items-center order-1 md:order-3">
                         {/* Connector line from dot to pill */}
-                        <div className="w-4 h-px bg-accent-orange/40 shrink-0" />
+                        <div className="hidden md:block w-4 h-px bg-accent-orange/40 shrink-0" />
                         <DatePill label={exp.periodLabel} />
                       </div>
                     </>
                   ) : (
                     <>
                       {/* Date pill — left side */}
-                      <div className="w-[46%] pr-8 flex items-center justify-end">
+                      <div className="w-full md:w-[46%] pl-10 md:pl-0 md:pr-8 flex items-center md:justify-end order-1">
                         <DatePill label={exp.periodLabel} />
                         {/* Connector line from pill to dot */}
-                        <div className="w-4 h-px bg-accent-orange/40 shrink-0" />
+                        <div className="hidden md:block w-4 h-px bg-accent-orange/40 shrink-0" />
                       </div>
 
                       {/* Gap covering the dot */}
-                      <div className="w-[8%]" />
+                      <div className="hidden md:block w-[8%] order-2" />
 
                       {/* Card — right side */}
-                      <div className="w-[46%] pl-8 flex justify-start">
-                        <div className="w-full max-w-sm">
+                      <div className="w-full md:w-[46%] pl-10 md:pl-8 flex justify-start order-2 md:order-3 mt-3 md:mt-0">
+                        <div className="w-full max-w-sm md:max-w-md lg:max-w-sm">
                           <ExperienceCard exp={exp} />
                         </div>
                       </div>

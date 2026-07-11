@@ -112,7 +112,7 @@ export default function Contact() {
     <section id="contact" className="relative py-24 grid-bg">
       <div className="absolute left-1/4 bottom-0 w-96 h-96 bg-accent-orange/4 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <motion.div
           initial="hidden"

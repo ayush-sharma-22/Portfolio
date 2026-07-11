@@ -44,7 +44,7 @@ export default function Skills() {
       {/* Ambient glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-orange/5 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <motion.div
           initial="hidden"
@@ -68,7 +68,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="relative mx-auto h-[520px] w-full max-w-3xl"
+          className="relative mx-auto h-[350px] md:h-[450px] lg:h-[520px] w-full max-w-3xl"
         >
           {!prefersReducedMotion ? (
             <Suspense fallback={<GlobFallback />}>

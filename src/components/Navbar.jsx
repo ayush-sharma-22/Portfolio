@@ -89,7 +89,7 @@ export default function SidebarNav() {
 
   return (
     <nav
-      className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-4 pointer-events-none"
+      className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col items-center gap-4 pointer-events-none"
       aria-label="Section navigation"
     >
 

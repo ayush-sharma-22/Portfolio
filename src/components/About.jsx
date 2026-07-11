@@ -58,7 +58,7 @@ export default function About() {
       {/* Ambient glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-orange/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         {/* Section header */}
         <motion.div
@@ -228,7 +228,7 @@ export default function About() {
             </div>
 
             {/* ── Stat cards row — each its own card ───────────────── */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {stats.map(({ icon, iconColor, category, value, unit }) => (
                 <div
                   key={category}

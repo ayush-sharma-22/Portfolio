@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary">
       <SidebarNav />
-      <main className="pr-14">
+      <main className="md:pr-14">
         <Hero />
         <About />
         <Experience />
